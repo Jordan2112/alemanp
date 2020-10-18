@@ -68,7 +68,7 @@ public class Login extends JFrame {
 				
 				String Nombre;
 				String Password;
-				//String Resultado;
+				
 				
 				
 				Nombre = txtNombre.getText();
