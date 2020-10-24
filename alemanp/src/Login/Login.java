@@ -16,6 +16,8 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JPasswordField;
+import java.awt.Font;
+import java.awt.Color;
 
 
 
@@ -63,6 +65,7 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 208);
 		contentPane = new JPanel();
+		contentPane.setForeground(Color.RED);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -181,9 +184,10 @@ public class Login extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(138, 116, 85, 20);
 		contentPane.add(passwordField);
+		
+		JLabel lblNewLabel_2 = new JLabel("INICIO DE SESION");
+		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 19));
+		lblNewLabel_2.setBounds(137, 11, 173, 27);
+		contentPane.add(lblNewLabel_2);
 	}
-	
-	
-	
-	
 }
