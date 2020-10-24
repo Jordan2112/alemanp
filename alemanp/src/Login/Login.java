@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import javax.swing.JPasswordField;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 
 
@@ -59,13 +60,14 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		setForeground(Color.DARK_GRAY);
 		
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 208);
 		contentPane = new JPanel();
-		contentPane.setForeground(Color.RED);
+		contentPane.setForeground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -79,11 +81,13 @@ public class Login extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		txtNombre = new JTextField();
+		txtNombre.setBackground(Color.WHITE);
 		txtNombre.setBounds(137, 61, 86, 20);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		JButton btnIngresar = new JButton("Ingresar");
+		btnIngresar.setBackground(Color.GRAY);
 		btnIngresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -162,6 +166,7 @@ public class Login extends JFrame {
 		contentPane.add(btnIngresar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBackground(Color.GRAY);
 		btnCancelar.addMouseListener (new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -185,7 +190,7 @@ public class Login extends JFrame {
 		passwordField.setBounds(138, 116, 85, 20);
 		contentPane.add(passwordField);
 		
-		JLabel lblNewLabel_2 = new JLabel("INICIO DE SESION");
+		JLabel lblNewLabel_2 = new JLabel("INICIO DE SESI\u00D3N");
 		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 19));
 		lblNewLabel_2.setBounds(137, 11, 173, 27);
 		contentPane.add(lblNewLabel_2);
