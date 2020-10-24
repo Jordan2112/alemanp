@@ -13,13 +13,21 @@ import javax.swing.JButton;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.JPasswordField;
+
+
+
+
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNombre;
 	private JPasswordField passwordField;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -35,12 +43,23 @@ public class Login extends JFrame {
 				}
 			}
 		});
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	/**
 	 * Create the frame.
 	 */
 	public Login() {
+		
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 208);
 		contentPane = new JPanel();
@@ -66,6 +85,27 @@ public class Login extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				
+				ArrayList<String> nombre = new ArrayList<String>();
+				ArrayList<String> password = new ArrayList<String>();
+				
+				nombre.add("Jordan");
+				password.add("123");
+				
+				nombre.add("Rosalinda");
+				password.add("1234");
+				
+				nombre.add("Jesus");
+				password.add("12345");
+				
+				nombre.add("Karla");
+				password.add("123456");
+				
+				nombre.add("Jose");
+				password.add("1234567");
+				
+				//Variables
+				
 				String Nombre;
 				String Password;
 				
@@ -74,13 +114,37 @@ public class Login extends JFrame {
 				Nombre = txtNombre.getText();
 				Password = new String(passwordField.getPassword());
 				
-				if(Nombre.equals("Jordan") && Password.equals("Aleman")) {
+				
+				boolean varNombreResul,varPasswordResul;
+				
+				varNombreResul = nombre.contains(Nombre);
+				
+				varPasswordResul = password.contains(Password);
+				
+				
+				
+				
+				if(varNombreResul == true && varPasswordResul == true) {
 					
 					JOptionPane.showMessageDialog(null, "Login Correcto");
+					txtNombre.setText(null);
+					passwordField.setText(null);
+					
+					txtNombre.requestFocus();
+					
+					
 					
 				}else {
 						
 					JOptionPane.showMessageDialog(null, "Login Incorrecto");
+					
+					txtNombre.setText(null);
+					passwordField.setText(null);
+					
+					txtNombre.requestFocus();
+					
+					
+					
 					}
 					
 					
@@ -95,6 +159,22 @@ public class Login extends JFrame {
 		contentPane.add(btnIngresar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addMouseListener (new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				System.exit(ABORT);
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+		});
 		btnCancelar.setBounds(286, 115, 89, 23);
 		contentPane.add(btnCancelar);
 		
@@ -102,4 +182,8 @@ public class Login extends JFrame {
 		passwordField.setBounds(138, 116, 85, 20);
 		contentPane.add(passwordField);
 	}
+	
+	
+	
+	
 }
